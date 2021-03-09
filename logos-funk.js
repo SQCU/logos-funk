@@ -1,6 +1,7 @@
 //drawing from  moz canvas docs at:
 //https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rotate
 //https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
+//drawing from https://github.com/SQCU/logos-test  (I made this.)
 //What we thought was an OOPsie was unintended preserved state.
 //TODO:	validate functions (especially characteristics of canv.ctx after any routine that fucks with them
 //TODO: rewrite objects to accept functions (for position, velocity, et cetera) in the constructor
@@ -89,17 +90,6 @@ function step(timestamp)	{
 	canv.width = canv.offsetWidth;
 	canv.height = canv.offsetHeight;
 	const center = [Math.floor(canv.width/2), Math.floor(canv.height/2)];	//why arrays? I thought I had a matrix-add in the standard library.  Actually math and Math are two different libraries, silly me!
-	//var displacement = Math.ceil(canv.width/8);
-	
-	//trigging it up
-	//let theta = elapsed/500;		//2 radians per second. 1 rot per 3 secondsish?
-	//let finna = elapsed/1300*Math.log(elapsed/1300);	//1 radian per 1.3s, dradians/dt of Nlog(1.3 seconds)
-	//nlogn is funnier than any other numerical progression, look it up, it's the bedrock of comp complexity theory.
-	//let target = [displacement*Math.cos(theta), displacement*Math.sin(theta)];
-	
-	//old simple routine here
-	//plotRot(schwayFrame, center[0]+target[0], center[1]+target[1], finna);
-	//center mark
 	draw(schwayFrame, center[0], center[1]);	//centered schway
 	
 	dorkorbit.forEach(thub => {
